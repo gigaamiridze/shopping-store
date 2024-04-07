@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @RequestMapping("/api/v1/product")
 public interface ProductController {
 
@@ -17,4 +19,7 @@ public interface ProductController {
 
     @GetMapping("/{productId}")
     ResponseEntity<ProductDto> getProductById(@PathVariable Long productId);
+
+    @GetMapping("/all")
+    ResponseEntity<List<ProductDto>> getAllProduct();
 }

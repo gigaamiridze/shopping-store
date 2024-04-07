@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Slf4j
@@ -27,5 +28,10 @@ public class ProductServiceImpl implements ProductService {
     public Product getProductById(Long productId) {
         return productRepository.findById(productId)
                 .orElseThrow(() -> new NoSuchElementException("Product not found with id: " + productId));
+    }
+
+    @Override
+    public List<Product> getAllProduct() {
+        return productRepository.findAll();
     }
 }
