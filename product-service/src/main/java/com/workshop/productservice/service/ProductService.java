@@ -5,4 +5,6 @@ import com.workshop.productservice.entity.Product;
 public interface ProductService {
 
     Product createProduct(Product product);
+
+    Product getProductById(Long productId);
 }
